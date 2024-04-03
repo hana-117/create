@@ -22,6 +22,8 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
         return self.request.user
     
     
+#ここから
+
 class FollowBase(LoginRequiredMixin, View):
     """フォローのベース。リダイレクト先を以降で継承先で設定"""
     def get(self, request, *args, **kwargs):
@@ -52,6 +54,9 @@ class AccountListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         qs = CustomUser.objects.exclude(id=self.request.user.id)
         return qs
+
+
+#ここまで
     
     
     
